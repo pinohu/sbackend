@@ -1,0 +1,34 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*/
+dist/
+build/
+
+# React Native
+ios/build/
+android/app/build/
+android/build/
+*.keystore
+
+# Environment
+.env
+.env.*
+*.env
+
+# Test/coverage
+coverage/
+*.lcov
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Misc
+*.log 

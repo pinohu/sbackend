@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  metro:
+    build: .
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+      - SUITEDASH_PUBLIC_ID=${SUITEDASH_PUBLIC_ID}
+      - SUITEDASH_SECRET_KEY=${SUITEDASH_SECRET_KEY}
+      - SENTRY_DSN=${SENTRY_DSN} 

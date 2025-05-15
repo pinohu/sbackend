@@ -1,0 +1,49 @@
+{
+  "name": "SuiteDashClientApp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.72.0",
+    "axios": "^1.6.0",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/stack": "^6.3.16",
+    "@react-native-async-storage/async-storage": "^1.21.0",
+    "react-native-dotenv": "^3.4.8",
+    "@sentry/react-native": "^5.20.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "@testing-library/react-native": "^12.1.5",
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0",
+    "detox": "^20.0.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"]
+  },
+  "detox": {
+    "testRunner": "jest",
+    "configurations": {
+      "ios.sim.debug": {
+        "type": "ios.simulator",
+        "device": { "type": "iPhone 12" },
+        "build": "xcodebuild -workspace ios/YourApp.xcworkspace -scheme YourApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/YourApp.app"
+      },
+      "android.emu.debug": {
+        "type": "android.emulator",
+        "device": { "avdName": "Pixel_3a_API_30_x86" },
+        "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "testBinaryPath": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
+      }
+    }
+  }
+} 
